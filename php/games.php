@@ -1,5 +1,5 @@
 <?php 
-$base_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]";
+$base_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
 
 function getGames($dir) {
@@ -19,7 +19,8 @@ function getGames($dir) {
         if ($info["extension"] === "zip") {
             $games[] = array(
                 "name" => $info["filename"],
-                "url" => "$base_link/$dir/$info[basename]"
+                #"url" => "$base_link/$dir/$info[basename]",
+                "url" => "./games/$info[basename]"
             );
         }
     }
