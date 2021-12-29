@@ -19,6 +19,9 @@ $games = getGames($dir);
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/plupload.full.min.js"></script>
+    <script src="js/script.js"></script>
 </head>
 
 <body>
@@ -50,11 +53,16 @@ $games = getGames($dir);
             <h2>
                 Game uploaden
             </h2>
-            <form action="upload.php" method="post" enctype="multipart/form-data" class="upload-form">
-                <input class="upload-form_text" type="text" name="gameTitle" placeholder="Game title" required/>
-                <input class="upload-form_file" type="file" name="gameZip" id="fileToUpload" required/>
-                <input class="upload-form_submit" type="submit" value="Upload game" name="submit" />
+            <form class="upload-form" id="gameUploadForm">
+                <input class="upload-form_text" type="text" name="gameTitle" id="gameTitle" placeholder="Game title" required />
+                
+                <button type="button" class="upload-form_select">Select file</button>
+                <span class="upload-form_filename"></span>
+
+                <button type="submit" class="upload-form_submit">Upload game</button>
+                <span class="upload-form_progress"></span>
             </form>
+            <div id="container"></div>
         </section>
     </main>
 </body>

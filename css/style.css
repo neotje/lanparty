@@ -48,6 +48,11 @@ main {
     cursor: pointer;
 }
 
+.upload-form .upload-form_submit:disabled {
+    background-color: gray;
+    cursor: crosshair;
+}
+
 .upload-form {
 }
 
