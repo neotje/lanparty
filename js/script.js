@@ -14,7 +14,7 @@ window.addEventListener("load", () => {
         browse_button: uploadFormSelect,
         container: document.querySelector("#container"),
 
-        url: "/upload.php",
+        url: "./upload.php",
         chunk_size: "3mb",
         max_retries: 3,
         multi_selection: false,
